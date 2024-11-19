@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <title>MapboxGL LegendControl example</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js"></script>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4/dist/maplibre-gl.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4/dist/maplibre-gl.min.css">
     <style>
       body {
         margin: 0;
@@ -24,15 +24,14 @@
   <body>
     <div id="map"></div>
     <script type="module" lang="ts">
-      import { Map } from 'mapbox-gl';
+      import { Map } from 'maplibre-gl';
       import LegendControl from './src';
 
       const map = new Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/light-v10',
+        style: 'https://demotiles.maplibre.org/style.json',
         zoom: 12,
         center: [-122.447303, 37.753574],
-        accessToken: import.meta.env.VITE_MAPBOX_TOKEN,
       });
 
       const legend = new LegendControl({
